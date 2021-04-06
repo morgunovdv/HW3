@@ -12,11 +12,8 @@ namespace Vector
             Vector a = new Vector(2, 4, 10);
             Vector b = new Vector(6, 10, 15);
 
-            a.vectors.Add(a);
-            a.vectors.Add(b);
-
-            int e = a.CalculateDistanceVector();
-            int g = a.ScalarProduct();
+            double e = a.CalculateDistance();
+            double g = ScalarProduct();
             string h = a.CrossProduct();
             string j = a.SumSub();
 

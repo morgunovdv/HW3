@@ -10,11 +10,17 @@ namespace Vector
     class Vector
     {
         public List<Vector> vectors = new List<Vector>();
-        private int _x;
-        private int _y;
-        private int _z;
+        private double _x;
+        private double _y;
+        private double _z;
 
-        public Vector(int x, int y, int z)
+        public double X => _x;
+        public double Y => _y;
+        public double Z => _z;
+
+
+
+        public Vector(double x, double y, double z)
         {
             _x = x;
             _y = y;
@@ -23,33 +29,47 @@ namespace Vector
 
         
 
-        public int CalculateDistanceVector()
+        public double CalculateDistance()
         {
             double d = Math.Sqrt(Math.Pow(_x, 2) + Math.Pow(_y, 2) + Math.Pow(_z, 2));
-            return Convert.ToInt32(d);
+            return d;
         }
 
-        public int ScalarProduct()
+        public static double ScalarProduct(Vector a, Vector b)
         {
-            int r =( (vectors[0]._x * vectors[1]._x) + 
-                     (vectors[0]._y * vectors[1]._y) + 
-                     (vectors[0]._z * vectors[1]._z) );
+            double r =( (b.X * a.X) + 
+                        (b.Y * a.Y) + 
+                        (b.Z * a.Z) );
             return r;
         }
 
-        public string CrossProduct()
+        public static Vector CrossProduct(Vector a, Vector b)
         {
-            string r = $"{(vectors[0]._y * vectors[1]._z) - (vectors[0]._z * vectors[1]._y)}, " +
-                       $"{(vectors[0]._z * vectors[1]._x) - (vectors[0]._x * vectors[1]._z)}, " +
-                       $"{(vectors[0]._x * vectors[1]._y) - (vectors[0]._y * vectors[1]._x)}";
+            Vector r = new Vector((a.Y * b.Z) - (a.Z * b.Y),(a.Z * b.X) - (a.X * b.Z), (a.X * b.Y) - (a.Y * b.X));
             return r;
         }
 
-        public string SumSub()
+        public static double CalculateAngle(Vector a, Vector b)
         {
-            string r = ($"Суммы векторов: {vectors[0]._x + vectors[1]._x}, {vectors[0]._y + vectors[1]._y}, {vectors[0]._z + vectors[1]._z}. \nРазность векторов: {vectors[0]._x - vectors[1]._x}, {vectors[0]._y - vectors[1]._y}, {vectors[0]._z - vectors[1]._z}");
+            double r = ScalarProduct(a, b);
+            double g = a.CalculateDistance();
+            double e = b.CalculateDistance();
+            double t = g * e;
+            return r / t;
+            
+        }
+
+        public static Vector Sum(Vector a, Vector b)
+        {
+            Vector r = new Vector((a.X + b.X), (a.Y + b.Y), (a.Z + b.Z));
 
             return r;
-        }   
+        }
+
+        public static Vector Sub(Vector a, Vector b)
+        {
+            Vector r = new Vector((a.X - b.X), (a.Y - b.Y), (a.Z - b.Z));
+            return r;
+        }
     }
 }
