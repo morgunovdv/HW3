@@ -9,7 +9,7 @@ namespace HW3
     class Polygon
     {
 
-        private List<Point> _points = new List<Point>();
+        public List<Point> _points = new List<Point>();
 
         public string GetName()
         {
@@ -54,21 +54,23 @@ namespace HW3
             _points.Add(m);
         }
 
-        //public int GetPerimetr()
-        //{
-        //    int p = a + b + c;
-        //}
-
-        private int GetDistance()
+        public double Perimeter()
         {
-            double a = Math.Sqrt(Math.Pow((_points[0].X - _points[1].X), 2) + Math.Pow((_points[0].Y - _points[1].Y), 2));
+            int n = _points.Count;
+            double sum = 0;
+            for (int i=0; i<n-1; i++)
+            {
+                sum = sum + GetDistance(_points[i], _points[i+1]);
+            }
+            sum = sum + GetDistance(_points[0], _points[n-1]);
+            
+            return sum;
+        }
 
-            return a;
-        } 
-
-        
-
-
-
+        private double GetDistance(Point x, Point y)
+        {
+            double d = Math.Sqrt(Math.Pow((x.X - y.X), 2) + Math.Pow((x.Y - y.Y), 2));
+            return d;
+        }
     }
 }
