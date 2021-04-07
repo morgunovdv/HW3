@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 namespace Vector
 {
     class Vector
-    {
-        public List<Vector> vectors = new List<Vector>();
+    { 
+
+        public override string ToString()
+        {
+            return $"{X},{Y},{Z}";
+        }
+
         private double _x;
         private double _y;
         private double _z;
@@ -62,7 +67,6 @@ namespace Vector
         public static Vector Sum(Vector a, Vector b)
         {
             Vector r = new Vector((a.X + b.X), (a.Y + b.Y), (a.Z + b.Z));
-
             return r;
         }
 
@@ -72,4 +76,6 @@ namespace Vector
             return r;
         }
     }
+
+    
 }

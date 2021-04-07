@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW3", "HW3\HW3.csproj", "{920CE7AA-BE64-4207-A2FE-DBD4D238B44F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector", "Vector\Vector.csproj", "{826D0EFE-7D23-4249-903C-41343A848E79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vector", "Vector\Vector.csproj", "{826D0EFE-7D23-4249-903C-41343A848E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shape", "Shape\Shape.csproj", "{ABCADC30-CA66-4DAC-A08D-D776FCF6031A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{826D0EFE-7D23-4249-903C-41343A848E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{826D0EFE-7D23-4249-903C-41343A848E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{826D0EFE-7D23-4249-903C-41343A848E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCADC30-CA66-4DAC-A08D-D776FCF6031A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCADC30-CA66-4DAC-A08D-D776FCF6031A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCADC30-CA66-4DAC-A08D-D776FCF6031A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCADC30-CA66-4DAC-A08D-D776FCF6031A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
