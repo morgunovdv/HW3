@@ -17,7 +17,7 @@ namespace Shape
 
         public override double Volume()
         {
-            double V = (4 / 3) * Math.PI * Math.Pow(_r, 3);
+            double V = (4 / 3.0) * Math.PI * Math.Pow(_r, 3);
             return V;
         }
     }
