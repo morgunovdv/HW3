@@ -20,11 +20,11 @@ namespace Shape
             _freeVolume = Volume();
         }
 
-        //private void PrintShapesInfo()
-        //{
-        //    Console.WriteLine($"Фигура {_shapes.} ");
-        //}
-        
+        private void PrintShapesInfo()
+        {
+            ;
+        }
+
 
 
 
