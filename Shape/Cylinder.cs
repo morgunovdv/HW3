@@ -22,5 +22,10 @@ namespace Shape
             double V = Math.PI * Math.Pow(_r, 2) * _h;
             return V;
         }
+
+        public override string ToString()
+        {
+            return "Цилиндр";
+        }
     }
 }

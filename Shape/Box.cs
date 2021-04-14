@@ -11,6 +11,8 @@ namespace Shape
        
         private double _h; 
         private double _freeVolume;
+        private List<Shape> _shapes = new List<Shape>();
+        
 
         public Box(double h)
         {
@@ -18,29 +20,24 @@ namespace Shape
             _freeVolume = Volume();
         }
 
+        //private void PrintShapesInfo()
+        //{
+        //    Console.WriteLine($"Фигура {_shapes.} ");
+        //}
         
+
+
 
         public bool Add(Shape shape)
         {
-            //List<Shape> shapes = new List<Shape>();
-
-
-            //while (Volume()> shape.Volume())
-            //{
-            //    
-            //   
-            //    
-            //    break;
-            //}
-
             
 
             if (_freeVolume > shape.Volume())
             {
                 _freeVolume -= shape.Volume();
-                //shapes.Add(shape);
-                Console.WriteLine($"Оставшийся объем коробки {_freeVolume}");
-                
+                _shapes.Add(shape);
+
+                Console.WriteLine($"Оставшийся объем коробки {_freeVolume}, {shape} ");
                 return true;
             } 
             else
@@ -56,7 +53,9 @@ namespace Shape
             return V;
         }
 
-        
-
+        public override string ToString()
+        {
+            return "Куб";
+        }
     }
 }

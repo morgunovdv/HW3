@@ -23,5 +23,10 @@ namespace Shape
             double V = (_s * _h) / 3;
             return V;
         }
+
+        public override string ToString()
+        {
+            return "Пирамида";
+        }
     }
 }
